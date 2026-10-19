@@ -1,0 +1,15 @@
+name: isoseq
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.8
+  # PacBio Iso-Seq toolchain (bioconda package names)
+  - isoseq          # refine, cluster2, collapse
+  - lima            # demultiplexing / primer removal (--isoseq)
+  - pbmm2           # alignment (--preset ISOSEQ)
+  - pbpigeon        # provides `pigeon` (prepare, classify, filter, report)
+  - pbskera         # provides `skera` (only needed if you start from HiFi reads)
+  - samtools        # counts, indexing, header edits (fix-sm)
+  - pbbam           # provides `pbindex` (rebuilds .pbi after fix-sm)
+  - seqkit          # optional: quick read QC
